@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    {# TODO: Fix how the delete template looks #}
+    <div class="edit-delete delete-photo">
+        <h2>Delete photo</h2>
+
+        <form method='post' action="{% url 'delete photo' pk=pk%}" enctype="multipart/form-data">
+            {{ form.as_p }}
+            <button class="edit-btn" type="submit">Delete Photo</button>
+            {% csrf_token %}
+        </form>
+
+    </div>
+
+{% endblock %}
